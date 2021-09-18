@@ -25,12 +25,13 @@ const setHour = () => {
     secondbox2.getElementsByClassName(`b6n${second2}`)[0].classList.add('selected')
 
     //animation
-    hourbox1.style.bottom = `${hour1*38}px`
-    hourbox2.style.bottom = `${hour2*38}px`
-    minutebox1.style.bottom = `${minute1*38}px`
-    minutebox2.style.bottom = `${minute2*38}px`
-    secondbox1.style.bottom = `${second1*38}px`
-    secondbox2.style.bottom = `${second2*38}px`
+    const height = hourbox1.children[0].clientHeight
+    hourbox1.style.bottom = `${hour1*height}px`
+    hourbox2.style.bottom = `${hour2*height}px`
+    minutebox1.style.bottom = `${minute1*height}px`
+    minutebox2.style.bottom = `${minute2*height}px`
+    secondbox1.style.bottom = `${second1*height}px`
+    secondbox2.style.bottom = `${second2*height}px`
     
     //recursion every second
     setTimeout(setHour, 1000)
